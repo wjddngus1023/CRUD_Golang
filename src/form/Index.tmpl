@@ -1,0 +1,30 @@
+{{ define "Index" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> DB 목록 </h2>
+    <table border="1">
+      <thead>
+      <tr>
+        <td style="color:blue"><b>ID</b></td>
+        <td style="color:blue"><b>이름</b></td>
+        <td style="color:blue"><b>도시</b></td>
+        <td style="color:blue"><b>상세정보</b></td>
+        <td style="color:blue"><b>수정</b></td>
+        <td style="color:blue"><b>삭제</b></td>
+      </tr>
+       </thead>
+       <tbody>
+    {{ range . }}
+      <tr>
+        <td><b>{{ .Id }}</b></td>
+        <td> {{ .Name }} </td>
+        <td>{{ .City }} </td> 
+        <td><a href="/show?id={{ .Id }}"> 상세정보 </a></td>
+        <td><a href="/edit?id={{ .Id }}"> 수정 </a></td>
+        <td><a href="/delete?id={{ .Id }}"> 삭제 </a><td>
+      </tr>
+    {{ end }}
+       </tbody>
+    </table>
+  {{ template "Footer" }}
+{{ end }}

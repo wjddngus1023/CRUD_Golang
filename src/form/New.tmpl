@@ -1,0 +1,11 @@
+{{ define "New" }}
+  {{ template "Header" }}
+    {{ template "Menu" }} 
+   <h2><b>새로운 회원의 이름과 도시를 입력하세요</b></h2>  
+    <form method="POST" action="insert">
+      <label> 이름 </label><input type="text" name="name" /><br />
+      <label>   도시 </label><input type="text" name="city" /><br />
+      <input type="submit" value="유저 등록" />
+    </form>
+  {{ template "Footer" }}
+{{ end }}

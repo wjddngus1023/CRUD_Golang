@@ -1,0 +1,12 @@
+{{ define "Edit" }}
+  {{ template "Header" }}
+    {{ template "Menu" }} 
+   <h2> 수정할 이름과 도시를 입력하세요 </h2>  
+    <form method="POST" action="update">
+      <input type="hidden" name="uid" value="{{ .Id }}" />
+      <label><b> 이름 </b></label><input type="text" name="name" value="{{ .Name }}"  /><br />
+      <label><b>   도시 </b></label><input type="text" name="city" value="{{ .City }}"  /><br />
+      <input type="submit" value="유저 수정" />
+    </form><br />    
+  {{ template "Footer" }}
+{{ end }}
